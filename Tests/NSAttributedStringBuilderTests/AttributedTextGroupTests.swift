@@ -7,6 +7,7 @@
 
 @testable import NSAttributedStringBuilder
 import XCTest
+
 final class AttributedTextGroupTests: XCTestCase {
     func test0() {
         let att1 = NSAttributedString {
@@ -75,6 +76,36 @@ final class AttributedTextGroupTests: XCTestCase {
                 .font(.systemFont(ofSize: 18, weight: .semibold))
             }
             .backgroundColor(.blue)
+        }
+        XCTAssertTrue(att1.isEqual(att2))
+    }
+    func test3() {
+      
+        let att1 = NSAttributedString {
+            AText("111")
+                .backgroundColor(.blue)
+            AText("222")
+                .font(.systemFont(ofSize: 18, weight: .semibold))
+                .backgroundColor(.blue)            
+            Link("NSAttributedStringBuilder", url: URL(string: "https://github.com/ethanhuang13/NSAttributedStringBuilder")!)
+            Space()
+            AText("333")
+                .font(.systemFont(ofSize: 18, weight: .semibold))
+                .backgroundColor(.blue)
+        }
+        let att2 = NSAttributedString {
+            ATextGroup {
+                AText("111")
+                ATextGroup {
+                    AText("222")
+                    Link("NSAttributedStringBuilder", url: URL(string: "https://github.com/ethanhuang13/NSAttributedStringBuilder")!)
+                    Space()
+                    AText("333")
+                }
+                .font(.systemFont(ofSize: 18, weight: .semibold))
+            }
+            .backgroundColor(.blue)
+            
         }
         XCTAssertTrue(att1.isEqual(att2))
     }

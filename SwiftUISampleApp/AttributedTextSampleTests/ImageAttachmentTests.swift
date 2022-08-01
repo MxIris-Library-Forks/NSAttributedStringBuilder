@@ -10,7 +10,7 @@ final class ImageAttachmentTests: XCTestCase {
             ImageAttachment(testImage, size: CGSize(width: 40, height: 40))
             LineBreak()
         }
-
+        
         XCTAssertNotNil(sut.attributes(at: 0, effectiveRange: nil)[.attachment])
         // TODO: Better test
     }
