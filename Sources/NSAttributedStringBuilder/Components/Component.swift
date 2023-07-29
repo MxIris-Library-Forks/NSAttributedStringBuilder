@@ -1,9 +1,11 @@
 #if canImport(UIKit)
     import UIKit
     public typealias Size = CGSize
+    public typealias Rect = CGRect
 #elseif canImport(AppKit)
     import AppKit
     public typealias Size = NSSize
+    public typealias Rect = NSRect
 #endif
 
 public protocol Component {

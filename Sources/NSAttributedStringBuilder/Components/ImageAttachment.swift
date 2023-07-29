@@ -12,12 +12,12 @@ public extension NSAttributedString {
     struct ImageAttachment: Component {
         // MARK: Lifecycle
 
-        public init(_ image: Image, size: Size? = nil) {
+        public init(_ image: Image, bounds: Rect? = nil) {
             let attachment = NSTextAttachment()
             attachment.image = image
 
-            if let size = size {
-                attachment.bounds.size = size
+            if let bounds = bounds {
+                attachment.bounds = bounds
             }
 
             self.attachment = attachment
