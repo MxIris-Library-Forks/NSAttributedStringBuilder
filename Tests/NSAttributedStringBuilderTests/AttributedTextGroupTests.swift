@@ -17,6 +17,11 @@ final class AttributedTextGroupTests: XCTestCase {
             AText("222")
                 .font(.systemFont(ofSize: 30))
                 .foregroundColor(.black)
+            if true {
+                AText("222")
+                    .font(.systemFont(ofSize: 30))
+                    .foregroundColor(.black)
+            }
         }
 
         let att2 = NSAttributedString {
